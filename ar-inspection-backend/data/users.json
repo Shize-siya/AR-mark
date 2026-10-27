@@ -19,5 +19,12 @@
     "passwordHash": "EL0s3aL1JFEiFKpCWLCyKg==:1rmGSmZXZ69v0Eit9Ys1JYnx96ZuA2oIo0pic3ici3Q=",
     "role": "inspector",
     "createdAt": "2026-10-27T08:20:11.0301449Z"
+  },
+  {
+    "id": "8190df80-7946-4816-bbe5-2482bd1557b4",
+    "username": "1111",
+    "passwordHash": "gHI92xqU3wSCB/6CpRvvrQ==:BDW9f9ahbU3zuMTJG2FgJkuB6saV63i9n+ndd2GQAyI=",
+    "role": "viewer",
+    "createdAt": "2026-10-27T09:08:29.1051966Z"
   }
 ]

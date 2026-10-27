@@ -60,13 +60,13 @@
     "title": "高优先级测试",
     "description": "1",
     "priority": "high",
-    "status": "resolved",
+    "status": "in_progress",
     "position": {
       "x": 0.15063992142677307,
       "y": -0.619768500328064,
       "z": 0.41434261202812195
     },
     "createdAt": "2026-10-27T09:01:11.9424844Z",
-    "updatedAt": "2026-10-27T09:02:16.0915Z"
+    "updatedAt": "2026-10-27T09:08:50.3128814Z"
   }
 ]

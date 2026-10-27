@@ -47,4 +47,16 @@ cd ar-inspection-web && npm install && npm run dev
 
 ## 演示视频
 
-（待录制：手机端 + 电脑端各 3~5 分钟）
+### 📱 手机 AR 端 — 扫描平面 → 放置标记 → 选优先级 → 提交
+<video width="100%" controls>
+  <source src="demos/ar-app-demo.mp4" type="video/mp4">
+</video>
+
+### 💻 管理端 — 登录 → 实时查看 → 修改状态 → 人员管理
+<video width="100%" controls>
+  <source src="demos/web-admin-demo.mp4" type="video/mp4">
+</video>
+
+## 功能截图
+
+（待补充）
