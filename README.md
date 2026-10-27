@@ -47,15 +47,15 @@ cd ar-inspection-web && npm install && npm run dev
 
 ## 演示视频
 
+> GitHub README 不支持直接内嵌 `<video>`，点击下面的链接在浏览器中播放：
+
 ### 📱 手机 AR 端 — 扫描平面 → 放置标记 → 选优先级 → 提交
-<video width="100%" controls>
-  <source src="demos/ar-app-demo.mp4" type="video/mp4">
-</video>
+
+[▶ 点击观看 ar-app-demo.mp4 (3.96MB)](https://raw.githubusercontent.com/Shize-siya/AR-mark/main/demos/ar-app-demo.mp4)
 
 ### 💻 管理端 — 登录 → 实时查看 → 修改状态 → 人员管理
-<video width="100%" controls>
-  <source src="demos/web-admin-demo.mp4" type="video/mp4">
-</video>
+
+[▶ 点击观看 web-admin-demo.mp4 (13.33MB)](https://raw.githubusercontent.com/Shize-siya/AR-mark/main/demos/web-admin-demo.mp4)
 
 ## 功能截图
 
