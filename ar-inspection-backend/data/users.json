@@ -1,0 +1,23 @@
+[
+  {
+    "id": "315eaaa9-4a7b-4179-a5c2-93e3128e552d",
+    "username": "shize-siya",
+    "passwordHash": "3AU7wWyRzuecMENRf2ggag==:2zR7LcSB18crXCTDQxePZiZJh1KBg6bcklzOjDE8KU4=",
+    "role": "admin",
+    "createdAt": "2026-10-27T08:16:22.8681719Z"
+  },
+  {
+    "id": "830e6ea4-ddc6-42b9-92b7-6241d83e77fa",
+    "username": "321",
+    "passwordHash": "C6YgSXPvQUoi0GxsmZh8WA==:jp7YemLoEp3kDDa9hEY3WMHMW7WB31p+1nuCHMqTNhA=",
+    "role": "viewer",
+    "createdAt": "2026-10-27T08:17:51.057312Z"
+  },
+  {
+    "id": "c5fed381-d8f9-4487-bded-49d740bd09eb",
+    "username": "123",
+    "passwordHash": "EL0s3aL1JFEiFKpCWLCyKg==:1rmGSmZXZ69v0Eit9Ys1JYnx96ZuA2oIo0pic3ici3Q=",
+    "role": "inspector",
+    "createdAt": "2026-10-27T08:20:11.0301449Z"
+  }
+]
