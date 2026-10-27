@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a39bd5265e27444b6a11d50f747ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverBaseUrl: http://localhost:8080
+  serverBaseUrl: http://192.168.31.127:8080
 --- !u!4 &974725337
 Transform:
   m_ObjectHideFlags: 0

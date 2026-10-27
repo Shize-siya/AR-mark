@@ -50,6 +50,11 @@ public class IssueFormUI : MonoBehaviour
     {
         _selectedPriority = Mathf.Clamp(index, 0, 2);
         UpdatePriorityButtonHighlight();
+        // 同步更新 AR 场景里的 Marker 颜色和大小
+        if (markerPlacer != null && markerPlacer.CurrentMarker != null)
+        {
+            markerPlacer.ApplyMarkerStyle(_selectedPriority);
+        }
         Debug.Log("[IssueFormUI] Priority set to index=" + _selectedPriority + " (" + Priorities[_selectedPriority] + ")");
     }
 
@@ -86,9 +91,14 @@ public class IssueFormUI : MonoBehaviour
             {
                 _priorityButtons[i] = child.GetComponent<Button>();
                 _priorityButtonImages[i] = child.GetComponent<Image>();
+                // 绑 onClick — 之前用 execute_code 在编辑器里绑的 lambda 不序列化，运行时需要重新绑
+                int idx = i; // capture
+                _priorityButtons[i].onClick.RemoveAllListeners();
+                _priorityButtons[i].onClick.AddListener(() => SetPriority(idx));
             }
         }
         UpdatePriorityButtonHighlight();
+        Debug.Log("[IssueFormUI] FindPriorityButtons done. buttons=" + _priorityButtons.Length);
     }
 
     public bool IsFormOpen => formPanel != null && formPanel.activeSelf;

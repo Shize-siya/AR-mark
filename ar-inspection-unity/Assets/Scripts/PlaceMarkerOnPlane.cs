@@ -25,6 +25,36 @@ public class PlaceMarkerOnPlane : MonoBehaviour
     /// <summary>当前标记的世界坐标，供上报时使用</summary>
     public Vector3? CurrentMarkerPosition => currentMarker == null ? null : currentMarker.transform.position;
 
+    /// <summary>当前标记的 GameObject，供外部（表单）修改样式</summary>
+    public GameObject CurrentMarker => currentMarker;
+
+    /// <summary>根据优先级设置标记的颜色和大小（供 IssueFormUI 调用）</summary>
+    public void ApplyMarkerStyle(int priorityIndex)
+    {
+        if (currentMarker == null) return;
+        // 0=low 绿, 1=medium 黄, 2=high 红
+        Color[] colors = {
+            new Color(0.15f, 0.85f, 0.35f, 1f), // low 亮绿
+            new Color(0.95f, 0.75f, 0.10f, 1f), // medium 亮黄
+            new Color(0.95f, 0.20f, 0.20f, 1f), // high 亮红
+        };
+        float[] sizes = { 0.12f, 0.16f, 0.22f }; // low 小, medium 中, high 大
+        int idx = Mathf.Clamp(priorityIndex, 0, 2);
+
+        // 改所有 MeshRenderer 的材质颜色
+        var renderers = currentMarker.GetComponentsInChildren<Renderer>(true);
+        foreach (var r in renderers)
+        {
+            foreach (var mat in r.materials)
+            {
+                mat.color = colors[idx];
+            }
+        }
+        // 改缩放：让 high 的标记明显更大
+        var targetScale = sizes[idx];
+        currentMarker.transform.localScale = Vector3.one * targetScale;
+    }
+
     private void Awake()
     {
         raycastManager = GetComponent<ARRaycastManager>();
@@ -51,6 +81,17 @@ public class PlaceMarkerOnPlane : MonoBehaviour
         if (currentMarker != null) Destroy(currentMarker);
 
         currentMarker = Instantiate(markerPrefab, position, Quaternion.identity);
+
+        // 放好后先给个默认灰白色，大小中等
+        currentMarker.transform.localScale = Vector3.one * 0.16f;
+        var renderers = currentMarker.GetComponentsInChildren<Renderer>(true);
+        foreach (var r in renderers)
+        {
+            foreach (var mat in r.materials)
+            {
+                mat.color = new Color(0.65f, 0.65f, 0.65f, 1f); // 中性灰
+            }
+        }
 
         // 通知表单：已有新标记，可以填写问题信息了
         issueForm?.OnMarkerPlaced();
